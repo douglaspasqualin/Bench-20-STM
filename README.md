@@ -52,7 +52,7 @@ After installing all [prerequisites](#prerequisites), the easiest way to run all
 
 `$ ./run-all.sh`
 
-This script will run all experiments with exactly the same configuration that we have used in the paper. It will probably take **more than 24 hours** to run all experiments. Also, make sure that the machine where you will run the experiments supports at least 192 threads. Additionally, this script will generate the graphs in the "Results" folder (created dynamically).
+This script will run all experiments with exactly the same configuration that we have used in the paper. It will probably take **more than 24 hours** to run all experiments. Also, make sure that the machine where you will run the experiments supports at least 192 threads. Additionally, this script will generate the graphs in the "Results" folder.
 
 The next subsections explain how to run each experiment in the paper individually.
 
