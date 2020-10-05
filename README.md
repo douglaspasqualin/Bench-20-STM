@@ -25,11 +25,7 @@ To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. E
 ## Prerequisites
 The following packages/applications must be installed. All packages are debian based (apt install):
 
-`tar gzip build-essential libhwloc-dev`
-
-To generate the graphics
-
-`r-base`
+`$ sudo apt-get install tar gzip build-essential libhwloc-dev r-base`
 
 Installing R packages.
 
