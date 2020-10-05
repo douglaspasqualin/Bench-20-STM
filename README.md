@@ -6,13 +6,14 @@
 * [Environment](#environment)
 * [Prerequisites](#prerequisites)
 * [Running all experiments](#running-all-experiments)
-* [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
-* [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
-* [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
-* [Section 4.4 (Stability with different number of threads)](#section-44-stability-with-different-number-of-threads)
-* [Section 4.5 (Dynamic behavior)](#section-45-dynamic-behavior)
-* [Section 5.1 (Case Study)](#section-51-case-study)
-* [Section 5.2 (False sharing in Kmeans)](#section-52-false-sharing-in-kmeans)
+* [Running individual experiments](#running-individual-experiments)
+  * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
+  * [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
+  * [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
+  * [Section 4.4 (Stability with different number of threads)](#section-44-stability-with-different-number-of-threads)
+  * [Section 4.5 (Dynamic behavior)](#section-45-dynamic-behavior)
+  * [Section 5.1 (Case Study)](#section-51-case-study)
+  * [Section 5.2 (False sharing in Kmeans)](#section-52-false-sharing-in-kmeans)
 
 ## Paper Info
 
