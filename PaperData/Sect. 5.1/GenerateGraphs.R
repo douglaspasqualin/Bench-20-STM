@@ -108,7 +108,6 @@ for (i in 1: nrow(apps)) {
   
   #Remove legend and increase font size
  graph <- graph + theme(legend.position="none", text = element_text(size=15))
-  #graph <- graph + theme(text = element_text(size=15))
-  ggsave(plot = graph, file = paste(appName, extensionFileName, ".pdf", sep = ""), 
+   ggsave(plot = graph, file = paste(appName, extensionFileName, ".pdf", sep = ""), 
          device = cairo_pdf, width = 10, height = 6, units = "cm")    
 }

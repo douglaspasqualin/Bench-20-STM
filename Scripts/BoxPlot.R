@@ -1,7 +1,5 @@
 library(ggplot2)
 
-#setwd("/home/douglas/GitRepo/ThesisFiles/03.Characterization/NewInputParam")
-
 Legend <- "Input params:"
 originalNames <- c("orig", "new")
 newNames <- c("Default", "Small")
@@ -25,12 +23,7 @@ graph <- ggplot(table, aes(x=app, y=mse, fill=config)) +
   xlab("Application") +
   ylab("MSE") +
   scale_fill_manual(values = colors, name = Legend, breaks = originalNames, labels = newNames)
-#  ggtitle("MSE over different input parameters") 
-#  labs(title = "Execution with 64 threads",
-#       subtitle = "Default X new input parameters")  
-#  stat_summary(fun=mean, geom="point", shape=23, size=4)
 
 graph <- graph + theme(legend.position="bottom", text = element_text(size=15))
-#print(graph)
 ggsave(plot = graph, file = "0.graph.pdf", 
        device = cairo_pdf, width = 15, height = 9, units = "cm")

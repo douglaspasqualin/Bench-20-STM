@@ -25,7 +25,6 @@ graph <-
   ),
   size = 0.5) +
   geom_point(aes(color = app, shape = app), size = 2) +
-#  labs(title = "Dynamic Behavior") +
   xlab("Execution phase") +
   ylab("MSE") +
   scale_shape_manual(values = c(4, 8, 15, 16, 17, 18, 21, 22, 3, 42))+ 
