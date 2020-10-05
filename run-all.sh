@@ -25,7 +25,7 @@ cd $rootFolder
 
 #Section 4.1
 cd "1.Memory access info/stamp"
-./run 64
+./run.sh 64
 
 #move results to Results folder
 mv *.txt ../../Results/Sect4.1/
@@ -42,7 +42,7 @@ cd ../../Results/Sect4.2/
 Rscript CalcMSE.R
 Rscript BoxPlot.R 
 #Generate Visual communication Matrices
-for f in *.csv;
+for f in *.csv; do
   Rscript VisualCommMatrix.R $f
 done
 
@@ -58,7 +58,7 @@ Rscript CalcMSENew.R
 tail -n +2 ../Sect4.2/mseCalculated.txt >> mseCalculated.txt 
 Rscript BoxPlot.R 
 #Generate Visual communication Matrices
-for f in *.csv;
+for f in *.csv; do
   Rscript VisualCommMatrix.R $f
 done
 
@@ -73,7 +73,7 @@ cd ../../Results/Sect4.4/32th
 Rscript CalcMSE.R
 Rscript BoxPlot.R 
 #Generate Visual communication Matrices
-for f in *.csv;
+for f in *.csv; do
   Rscript VisualCommMatrix.R $f
 done
 
@@ -87,7 +87,7 @@ cd ../../Results/Sect4.4/96th
 Rscript CalcMSE.R
 Rscript BoxPlot.R 
 #Generate Visual communication Matrices
-for f in *.csv;
+for f in *.csv; do
   Rscript VisualCommMatrix.R $f
 done
 
@@ -101,7 +101,7 @@ cd ../../Results/Sect4.5/
 Rscript CalcMSEDynamic.R
 Rscript GenerateGraphDynamic.R 
 #Generate Visual communication Matrices
-for f in *.csv;
+for f in *.csv; do
   Rscript VisualCommMatrix.R $f
 done
 
@@ -119,4 +119,5 @@ mv online_mapping.txt ../../Results/Sect5.1/
 
 cp "../../PaperData/Sect. 5.1/GenerateGraphs.R" ../../Results/Sect5.1/
 java -jar ../../JavaParser/JavaParser.jar $HOME/Bench-20-STM/Results/Sect5.1/
+cd ../../Results/Sect5.1/
 Rscript GenerateGraphs.R

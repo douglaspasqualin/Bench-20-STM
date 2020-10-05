@@ -49,7 +49,7 @@ Others (To decompress input files used in some benchmarks)
 To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark available in the folder [1.Memory access info](1.Memory%20access%20info). Under this folder, type:
 ```
 $ cd stamp
-$ ./run NUMBER_THREADS
+$ ./run.sh NUMBER_THREADS
 ```
 
 For each stamp application, one text file will be generated as an output. The file will have the following format: 
