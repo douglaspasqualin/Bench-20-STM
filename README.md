@@ -16,10 +16,9 @@
 
 ## Paper Info
 
-* ID: 19
+* Paper ID: 19
 * Title: Characterizing the Sharing Behavior of Applications using Software Transactional Memory
 * Authors: Douglas Pereira Pasqualin, Matthias Diener, André Rauber Du Bois and Maurício Lima Pilla
-* DOI: https://dx.doi.org/TBD
 
 
 ## Environment 
@@ -57,7 +56,9 @@ This script will run all experiments with exactly the same configuration that we
 
 The next subsections explain how to run each experiment in the paper individually.
 
-## Section 4.1 (STM memory access information)
+## Running individual experiments
+
+### Section 4.1 (STM memory access information)
 To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark suite available in the folder [1.Memory access info](1.Memory%20access%20info). In this folder, type:
 ```
 $ cd stamp
@@ -74,7 +75,7 @@ To generate the data of Table 2 shown in the paper, use the script [MemoryInfo.R
 
 In the folder [PaperData/Sect. 4.1](PaperData/Sect.%204.1) there are two files used to generate the data in the paper (Table 2). Due to the large size of the other files, some of them more than 1 GiB, we can not put all of them in this repository.
 
-## Section 4.2 (Stability across different executions)
+### Section 4.2 (Stability across different executions)
 To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark available in the folder [2.Sharing Behavior](2.Sharing%20Behavior). In this folder, type:
 ```
 $ cd stamp
@@ -96,7 +97,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 
 Open the folder [Sect. 4.2](PaperData/Sect.%204.2) and there will be the file _Figure_1.pdf_ and other pdfs with all communication matrices generated in this experiment.
 
-## Section 4.3 (Stability changing input)
+### Section 4.3 (Stability changing input)
 In the folder [2.Sharing Behavior](2.Sharing%20Behavior), type:
 ```
 $ cd stamp
@@ -111,7 +112,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 
 Open the folder [Sect. 4.3](PaperData/Sect.%204.3) and there will be the file _Figure_3.pdf_ and other pdfs with all communication matrices generated in this experiment.
 
-## Section 4.4 (Stability with different number of threads)
+### Section 4.4 (Stability with different number of threads)
 
 For this experiment, just follow the instructions of [Section 4.1](#section-41-stm-memory-access-information), just changing  NUMBER_THREADS. In the paper, we have used 32 and 96 threads and 10 executions.
 
@@ -122,7 +123,7 @@ To generate the figure used in the paper, open the folder [PaperData](PaperData)
 Open the folder [Sect. 4.4](PaperData/Sect.%204.4) and there will be two subfolders. Inside the folder [32th](PaperData/Sect.%204.4/32th) there will be the file _Figure_5a.pdf_ and under the folder [96th](PaperData/Sect.%204.4/96th) the file _Figure_5b.pdf_. 
 
 
-## Section 4.5 (Dynamic behavior)
+### Section 4.5 (Dynamic behavior)
 
 To be able to reproduce this experiment, it is necessary to save at least 10 communication matrices during the run of each application. To do that, we have used a metric called **SAVE_EVERY** based on the total of memory addresses accessed by one thread. In the script [verifyDynamic.sh](2.Sharing%20Behavior/stamp/verifyDynamic.sh) there are all values of **SAVE_EVERY** that we have used to generate the matrices, using 64 threads. In the folder [2.Sharing Behavior](2.Sharing%20Behavior), type
 ```
@@ -138,7 +139,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 
 Open the folder [Sect. 4.5](PaperData/Sect.%204.5) and there will be the file _Figure_7.pdf_ and other pdfs with all communication matrices generated in this experiment
 
-## Section 5.1 (Case Study)
+### Section 5.1 (Case Study)
 
 To be able to reproduce this experiment, the applications must be executed running a _linux default configuration_, and a static and online thread mapping.
 
@@ -202,7 +203,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 Open the folder [Sect. 5.1](PaperData/Sect.%205.1), there will be the graphics comparing the execution time of each configuration, grouped by thread number.
 
 
-## Section 5.2 (False sharing in Kmeans)
+### Section 5.2 (False sharing in Kmeans)
 
 For this experiment, it is necessary to change line [252](2.Sharing%20Behavior/stamp/kmeans/normal.c#L252) in the file [stamp/kmeans/normal.c](2.Sharing%20Behavior/stamp/kmeans/normal.c)
 
