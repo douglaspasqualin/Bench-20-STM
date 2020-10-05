@@ -3,7 +3,7 @@
 * [Paper Info](#paper-info)
 * [Environment](#environment)
 * [Prerequisites](#prerequisites)
-* [TL;DR](#tl-dr)
+* [TL;DR](#tldr)
 * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
 * [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
 * [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
