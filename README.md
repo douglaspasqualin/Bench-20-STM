@@ -9,7 +9,7 @@
 * [Running individual experiments](#running-individual-experiments)
   * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
   * [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
-  * [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
+  * [Section 4.3 (Stability when changing input)](#section-43-stability-when-changing-input)
   * [Section 4.4 (Stability with different number of threads)](#section-44-stability-with-different-number-of-threads)
   * [Section 4.5 (Dynamic behavior)](#section-45-dynamic-behavior)
   * [Section 5.1 (Case Study)](#section-51-case-study)
@@ -98,7 +98,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 
 Open the folder [Sect. 4.2](PaperData/Sect.%204.2) and there will be the file _Figure_1.pdf_ and other pdfs with all communication matrices generated in this experiment.
 
-### Section 4.3 (Stability changing input)
+### Section 4.3 (Stability when changing input)
 In the folder [2.Sharing Behavior](2.Sharing%20Behavior), type:
 ```
 $ cd stamp
