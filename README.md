@@ -3,6 +3,7 @@
 * [Paper Info](#paper-info)
 * [Environment](#environment)
 * [Prerequisites](#prerequisites)
+* [TL;DR](#tl-dr)
 * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
 * [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
 * [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
@@ -20,7 +21,7 @@
 
 
 ## Environment 
-To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. Each socket has 12 cores totalling 96 cores. For more details, please see the file [xeon.png](xeon.png)
+To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. Each socket has 12 cores totalling 96 cores (192 threads). For more details, please see the file [xeon.png](xeon.png)
 
 ## Prerequisites
 The following packages/applications must be installed. All packages are debian based (apt install):
@@ -43,6 +44,16 @@ $ make install
 Others (To decompress input files used in some benchmarks)
 
 `$ ./DecompressStampInputs.sh`
+
+## TL;DR
+
+After installing all prerequisites, the easiest way to run the experiments is to clone this repository in your home directory and run:
+
+`./run-all.sh`
+
+This script will run all experiments with exactly the same configuration that we have used in the paper. It will take **many hours** to run all. Also, make sure that the machine where you will run the experiments supports at least 192 threads. Additionally, this script will generate the graphs in the folder Results (created dynamically).
+
+The next instructions explain how to run the experiments of each Section individually.
 
 
 ## Section 4.1 (STM memory access information)
