@@ -173,11 +173,15 @@ $ ./run.sh NUMBER_EXECUTIONS
 
 The result of the execution will be save in the file _online_mapping.txt_
 
-To generate the graphs, we have used a text file with the following data:
+To generate the graphs, we have used a text file with the following data (separated by TAB):
 
-APPLICATION, THREADS, TIME, CONFIGURATION.
+APPLICATION	THREADS	TIME	CONFIGURATION.
 
-See the file [timeExec.txt](PaperData/Sect.%205.1/timeExec.txt) as an example.
+See the file [timeExec.txt](PaperData/Sect.%205.1/timeExec.txt) as an example. Additionally, you can use the JavaParser to generate the outputfile. Copy the generated _linux_default.txt_ , _staticMapping.txt_ and _online_mapping.txt_ to a new folder and use:
+
+`java -jar JavaParser/JavaParser.jar PATH_TO_FILES`
+
+It will generate a file _timeExec.txt_. Use the script [GenerateGraphs.R](Scripts/GenerateGraphs.R) to generate the graphic.
 
 To generate the graphic used in the paper, open the folder [PaperData](PaperData) and type:
 
