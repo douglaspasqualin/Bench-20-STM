@@ -21,7 +21,7 @@ mkdir -p Sect5.1
 cd $rootFolder
 
 #decompress input files used in some benchmarks
-./DecompressStampInputs.sh
+#./DecompressStampInputs.sh
 
 #Section 4.1
 cd "1.Memory access info/stamp"
