@@ -25,7 +25,7 @@ To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. E
 ## Prerequisites
 The following packages/applications must be installed. All packages are debian based (apt install):
 
-`$ sudo apt-get install tar gzip build-essential libhwloc-dev r-base`
+`$ sudo apt-get install tar gzip build-essential libhwloc-dev r-base r-cran-car r-cran-ggplot2`
 
 Installing R packages.
 
