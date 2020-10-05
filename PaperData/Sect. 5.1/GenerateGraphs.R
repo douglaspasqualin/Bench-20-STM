@@ -41,7 +41,7 @@ FormatSI <- function(x, ...) {
 fileName <- "timeExec.txt"
 
 ########## read a table from the file, using TAB as separator
-tg <- read.table(fileName, sep = ",")
+tg <- read.table(fileName, sep = "\t")
 
 #Legend <- "Mapping"
 Legend <- ""

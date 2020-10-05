@@ -31,7 +31,7 @@ for i in 32 64 96; do
 
    export STM_BIND_THREAD=ONLINE2;\
    for j in `seq 1 $executions`; do
-     ./stamp-test.sh online_mapping2.txt stm real ${i}
+     ./stamp-test.sh online_mapping.txt stm real ${i}
    done
    
 done
