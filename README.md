@@ -47,7 +47,7 @@ Others (To decompress input files used in some benchmarks)
 
 ## TL;DR
 
-After installing all prerequisites, the easiest way to run the experiments is to clone this repository in your home directory and run:
+After installing all [prerequisites](#prerequisites), the easiest way to run the experiments is to clone this repository in your home directory and run:
 
 `./run-all.sh`
 
