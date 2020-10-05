@@ -9,7 +9,7 @@
 * [Section 4.4 (Stability with different number of threads)](#section-44-stability-with-different-number-of-threads)
 * [Section 4.5 (Dynamic behavior)](#section-45-dynamic-behavior)
 * [Section 5.1 (Case Study)](#section-51-case-study)
-* [Section 5.1 (False sharing in Kmeans)](#section-51-false-sharing-in-kmeans)
+* [Section 5.2 (False sharing in Kmeans)](#section-52-false-sharing-in-kmeans)
 
 ## Paper Info
 
@@ -190,7 +190,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 Open the folder [Sect. 5.1](PaperData/Sect.%205.1) there will be the graphics comparing the execution time of each configuration, grouped by thread number.
 
 
-## Section 5.1 (False sharing in Kmeans)
+## Section 5.2 (False sharing in Kmeans)
 
 For this experiment, it is necessary to change line [252](2.Sharing%20Behavior/stamp/kmeans/normal.c#L252) in the file [stamp/kmeans/normal.c](2.Sharing%20Behavior/stamp/kmeans/normal.c)
 
@@ -200,4 +200,4 @@ Replace
 
 Re-run the application using the desired configuration.
 
-Under the folder [PaperData/Sect. 5.1](PaperData/Sect.%205.1) there is a .csv file [kmeans_false_sharing.csv](PaperData/Sect.%205.1/kmeans_false_sharing.csv) with the results of our runs. These results are in Table 4 in the paper.
+Under the folder [PaperData/Sect. 5.2](PaperData/Sect.%205.2) there is a .csv file [kmeans_false_sharing.csv](PaperData/Sect.%205.2/kmeans_false_sharing.csv) with the results of our runs. These results are in Table 4 in the paper.
