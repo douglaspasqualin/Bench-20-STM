@@ -1,9 +1,11 @@
-## Summary
+# Reproducing the experiments of Bench'20 - Paper 19
+
+## Overview
 
 * [Paper Info](#paper-info)
 * [Environment](#environment)
 * [Prerequisites](#prerequisites)
-* [TL;DR](#tldr)
+* [Running all experiments](#running-all-experiments)
 * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
 * [Section 4.2 (Stability across different executions)](#section-42-stability-across-different-executions)
 * [Section 4.3 (Stability changing input)](#section-43-stability-changing-input)
@@ -45,19 +47,18 @@ Others (To decompress input files used in some benchmarks)
 
 `$ ./DecompressStampInputs.sh`
 
-## TL;DR
+## Running all experiments
 
-After installing all [prerequisites](#prerequisites), the easiest way to run the experiments is to clone this repository in your home directory and run:
+After installing all [prerequisites](#prerequisites), the easiest way to run all experiments described in the paper is to clone this repository in your home directory and run:
 
-`./run-all.sh`
+`$ ./run-all.sh`
 
-This script will run all experiments with exactly the same configuration that we have used in the paper. It will take **many hours** to run all. Also, make sure that the machine where you will run the experiments supports at least 192 threads. Additionally, this script will generate the graphs in the folder Results (created dynamically).
+This script will run all experiments with exactly the same configuration that we have used in the paper. It will probably take **more than 24 hours** to run all experiments. Also, make sure that the machine where you will run the experiments supports at least 192 threads. Additionally, this script will generate the graphs in the "Results" folder (created dynamically).
 
-The next instructions explain how to run the experiments of each Section individually.
-
+The next subsections explain how to run each experiment in the paper individually.
 
 ## Section 4.1 (STM memory access information)
-To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark available in the folder [1.Memory access info](1.Memory%20access%20info). Under this folder, type:
+To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark suite available in the folder [1.Memory access info](1.Memory%20access%20info). In this folder, type:
 ```
 $ cd stamp
 $ ./run.sh NUMBER_THREADS
@@ -71,21 +72,21 @@ To generate the data of Table 2 shown in the paper, use the script [MemoryInfo.R
 
 `$ Rscript MemoryInfo.R fileName.txt`
 
-In the folder [PaperData/Sect. 4.1](PaperData/Sect.%204.1) there are two files used to generate the data in the paper (Table 2). Due to the large size of the other files, some of them more than 1 GiB, we cannot put all on the github.
+In the folder [PaperData/Sect. 4.1](PaperData/Sect.%204.1) there are two files used to generate the data in the paper (Table 2). Due to the large size of the other files, some of them more than 1 GiB, we can not put all of them in this repository.
 
 ## Section 4.2 (Stability across different executions)
-To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark available in the folder [2.Sharing Behavior](2.Sharing%20Behavior). Under this folder, type:
+To be able to reproduce this experiment, it is necessary to use the modified tinySTM and STAMP benchmark available in the folder [2.Sharing Behavior](2.Sharing%20Behavior). In this folder, type:
 ```
 $ cd stamp
 $ ./runDefaultParam.sh NUMBER_EXECUTIONS NUMBER_THREADS
 ```
 
-In the paper, we have used 64 threads and 10 executions. For each STAMP application and for each execution, a .csv file will be generated with the communication matrix. We have used those matrices to calculate the MSE and generate the graphs. 
+In the paper, we used 64 threads and 10 executions. For each STAMP application and for each execution, a .csv file will be generated with the communication matrix. We have used those matrices to calculate the MSE and generate the graphs. 
 
 To calculate the MSE of all .csv files in a folder, use the script [CalcMSE.R](Scripts/CalcMSE.R), available in the folder [Scripts](Scripts).
 
-* PS1: This script is configured to generate the MSE for 64 threads. To change it, edit the line [57](Scripts/CalcMSE.R#L57).
-* PS2: It is necessary more than one csv per application in order to calculate the MSE.
+* Note: This script is configured to generate the MSE for 64 threads. To change it, edit the line [57](Scripts/CalcMSE.R#L57).
+* Note: It is necessary more than one csv per application in order to calculate the MSE.
 
 The script will generate a file _mseCalculated.txt_, that can be used for input to generate the graphic. Use the script [BoxPlot.R](Scripts/BoxPlot.R) to generate the graphic.
 
@@ -102,7 +103,7 @@ $ cd stamp
 $ ./runSmallParam.sh NUMBER_EXECUTIONS NUMBER_THREADS
 ```
 
-In the paper, we have used 64 threads and 10 executions. Like the previous experiment, It will generate the communication matrices. To calculate the MSE, use the script [CalcMSENew.R](Scripts/CalcMSENew.R). Like the previous experiment, It will generate a file called _mseCalculated.txt_. Do a merge of the previous _mseCalculated.txt_ file with this new one and use the script [BoxPlot.R](Scripts/BoxPlot.R) to generate the graphic, comparing both.
+In the paper, we have used 64 threads and 10 executions. Like the previous experiment, it will generate the communication matrices. To calculate the MSE, use the script [CalcMSENew.R](Scripts/CalcMSENew.R). Like the previous experiment, it will generate a file called _mseCalculated.txt_. Do a merge of the previous _mseCalculated.txt_ file with this new one and use the script [BoxPlot.R](Scripts/BoxPlot.R) to generate the graphic, comparing both.
 
 To generate the graphic used in the paper, open the folder [PaperData](PaperData) and type:
 
@@ -114,7 +115,7 @@ Open the folder [Sect. 4.3](PaperData/Sect.%204.3) and there will be the file _F
 
 For this experiment, just follow the instructions of [Section 4.1](#section-41-stm-memory-access-information), just changing  NUMBER_THREADS. In the paper, we have used 32 and 96 threads and 10 executions.
 
-To generate the graphic used in the paper, open the folder [PaperData](PaperData) and type:
+To generate the figure used in the paper, open the folder [PaperData](PaperData) and type:
 
 `$ ./Sect.4.4.Graph.sh`
 
@@ -143,26 +144,26 @@ To be able to reproduce this experiment, the applications must be executed runni
 
 To create the inputs used for static thread mapping, we have used the [TopoMatch](https://gitlab.inria.fr/ejeannot/topomatch) tool. First, we need a communication matrix of each application for each thread configuration that we would like to use a static mapping.
 
-* Side note: Instead of using the .csv file, TopoMatch uses .mat files, but these files are generated by our mechanism, together with the .csv files. 
+* Note: Instead of using the .csv file, TopoMatch uses .mat files, but these files are generated by our mechanism, together with the .csv files. 
 
 For 64 threads it is possible to use the matrices generated in [Section 4.1](#section-41-stm-memory-access-information). For 32 and 96, the matrices generated in [Section 4.4](#section-44-stability-with-different-number-of-threads).
 
-Before using TopoMatch, it is necessary to generate a xml of the machine topology. This file can be generated using hwloc:
+Before using TopoMatch, it is necessary to generate an xml file of the machine topology. This file can be generated using hwloc:
 
 `$ lstopo --no-io --merge --of xml >> topology.xml`
 
-After that, we can use the tool mapping (part of TopoMatch, installed in [Prerequisites](#prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
+After that, we can use the "mapping" tool (part of TopoMatch, installed in [Prerequisites](#prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
 
 `$ mapping -x topology.xml -c genome_64.mat`
 
 Copy all numbers of the result of the first line _TopoMatch_:
 ![Alt text](mapping.png?raw=true "Output of mapping tool. Part of TopoMatch")
 
-Under the folder [2.Sharing Behavior/stamp](2.Sharing%20Behavior/stamp), create a folder called **inputMaps** and inside this folder, create a subfolder for each thread configuration. Finally, inside each thread subfolder, create a file called _topo.txt_.
+In the [2.Sharing Behavior/stamp](2.Sharing%20Behavior/stamp) folder, create a folder called **inputMaps** and in this folder, create a subfolder for each thread configuration. Finally, in each thread subfolder, create a file called _topo.txt_.
 
-Inside this file, paste the result of the generated topomatch mapping. 
+Paste the result of the generated topomatch mapping to this file. 
 
-* PS: In each subfolder, each application mapping must be in the same order in all files. 
+* Note: In each subfolder, each application mapping must be in the same order in all files. 
 
 Before running the application, the environment variable **MAP_LINE** must be set, mapping each line of _topo.txt_ file to their respective static thread mapping configuration. See the file [stamp-customMap.sh](2.Sharing%20Behavior/stamp/stamp-customMap.sh). 
 
@@ -170,7 +171,7 @@ To facilitate the execution, we kept our [static mapping](2.Sharing%20Behavior/s
 
 `$ ./stamp-exec-ntimes.sh NUMBER_EXECUTIONS NUMBER_THREADS`
 
-* PS: Verify the environment variable [THREAD_MAPPING_PATH](2.Sharing%20Behavior/stamp/stamp-exec-ntimes.sh#L29) inside [stamp-exec-ntimes.sh](2.Sharing%20Behavior/stamp/stamp-exec-ntimes.sh) to make sure that the path to the folder inputMaps is correct.
+* Note: Verify the environment variable [THREAD_MAPPING_PATH](2.Sharing%20Behavior/stamp/stamp-exec-ntimes.sh#L29) inside [stamp-exec-ntimes.sh](2.Sharing%20Behavior/stamp/stamp-exec-ntimes.sh) to make sure that the path to the folder inputMaps is correct.
 
 The result of the execution will be save in the files _linux_default.txt_ and _staticMapping.txt_
 
@@ -180,7 +181,7 @@ $ cd stamp
 $ ./run.sh NUMBER_EXECUTIONS
 ```
 
-* PS: This script is configured to run using 32, 64 and 96 threads.
+* Note: This script is configured to run using 32, 64 and 96 threads.
 
 The result of the execution will be save in the file _online_mapping.txt_
 
@@ -198,7 +199,7 @@ To generate the graphic used in the paper, open the folder [PaperData](PaperData
 
 `$ ./Sect.5.1.Graph.sh`
 
-Open the folder [Sect. 5.1](PaperData/Sect.%205.1) there will be the graphics comparing the execution time of each configuration, grouped by thread number.
+Open the folder [Sect. 5.1](PaperData/Sect.%205.1), there will be the graphics comparing the execution time of each configuration, grouped by thread number.
 
 
 ## Section 5.2 (False sharing in Kmeans)
