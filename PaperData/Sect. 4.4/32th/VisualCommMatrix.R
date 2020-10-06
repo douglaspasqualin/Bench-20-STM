@@ -127,7 +127,7 @@ for (filename in args) {
 	garbage = dev.off()
 
 	embedFonts(outfilename)
-	system(paste("pdfcrop ", outfilename, outfilename, "> /dev/null"))
+	#system(paste("pdfcrop ", outfilename, outfilename, "> /dev/null"))
 
 
 	# remove lower part of the matrix
