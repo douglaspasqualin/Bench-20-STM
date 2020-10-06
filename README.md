@@ -25,8 +25,17 @@
 ## Environment 
 To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. Each socket has 12 cores totalling 96 cores (192 threads). For more details, please see the file [xeon.png](xeon.png)
 
-## Prerequisites
-The following packages/applications must be installed. All packages are debian based (apt install):
+## Software prerequisites
+To reproduce our experiments, the following packages/applications are necessary:
+
+- gcc
+- tar, gzip
+- make
+- hwloc (with development headers)
+- Java
+- R
+
+On Debian-based Linux distributions, the following command installs the required packages:
 
 `$ sudo apt-get install tar gzip build-essential libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2`
 
