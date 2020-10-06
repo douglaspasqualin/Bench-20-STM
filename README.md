@@ -34,10 +34,11 @@ To reproduce our experiments, the following packages/applications are necessary:
 - hwloc (with development headers)
 - Java
 - R
+- Ghostscript (Embbed fonts in R)
 
 On Debian-based Linux distributions, the following command installs the required packages:
 
-`$ sudo apt-get install tar gzip build-essential libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2`
+`$ sudo apt-get install tar gzip build-essential libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2 ghostscript`
 
 Installing additional R packages.
 
