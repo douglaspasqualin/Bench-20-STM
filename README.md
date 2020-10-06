@@ -14,6 +14,7 @@
   * [Section 4.5 (Dynamic behavior)](#section-45-dynamic-behavior)
   * [Section 5.1 (Case Study)](#section-51-case-study)
   * [Section 5.2 (False sharing in Kmeans)](#section-52-false-sharing-in-kmeans)
+* [Expected results](#expected-results)
 
 ## Paper Info
 
@@ -225,3 +226,13 @@ Replace
 Re-run the application using the desired configuration.
 
 Under the folder [PaperData/Sect. 5.2](PaperData/Sect.%205.2) there is a .csv file [kmeans_false_sharing.csv](PaperData/Sect.%205.2/kmeans_false_sharing.csv) with the results of our runs. These results are in Table 4 in the paper.
+
+## Expected results
+
+* Section 4.1: General information about memory access. We expect to observe that the majority of the applications have a large amount of percentage of lines with false sharing.
+
+* Section 4.2 to 4.5: We expected similar values of MSE between the executions of the majority of the applications.
+
+* Section 5.1: Since the majority of the applications have a similar communication behavior between executions and do not present a dynamic sharing behavior (see results of Section 4.5) we excepted similar results between the static and online thread mapping.
+
+* Section 5.2: After changing the application to represent the correct size of the cache line of current microarchitectures we expect a lower execution time of kmeans.
