@@ -34,7 +34,7 @@ To reproduce our experiments, the following packages/applications are necessary:
 - hwloc (with development headers)
 - Java
 - R
-- Ghostscript (Embbed fonts in R)
+- Ghostscript (embed fonts in R)
 
 On Debian-based Linux distributions, the following command installs the required packages:
 
