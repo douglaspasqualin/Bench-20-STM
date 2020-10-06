@@ -4,7 +4,7 @@
 
 * [Paper Info](#paper-info)
 * [Environment](#environment)
-* [Prerequisites](#prerequisites)
+* [Software prerequisites](#software-prerequisites)
 * [Running all experiments](#running-all-experiments)
 * [Running individual experiments](#running-individual-experiments)
   * [Section 4.1 (STM memory access information)](#section-41-stm-memory-access-information)
@@ -58,7 +58,7 @@ Others (To decompress input files used in some benchmarks)
 
 ## Running all experiments
 
-After installing all [prerequisites](#prerequisites), the easiest way to run all experiments described in the paper is to clone this repository in your home directory and run:
+After installing all [prerequisites](#software-prerequisites), the easiest way to run all experiments described in the paper is to clone this repository in your home directory and run:
 
 `$ ./run-all.sh`
 
@@ -163,7 +163,7 @@ Before using TopoMatch, it is necessary to generate an xml file of the machine t
 
 `$ lstopo --no-io --merge --of xml >> topology.xml`
 
-After that, we can use the "mapping" tool (part of TopoMatch, installed in [Prerequisites](#prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
+After that, we can use the "mapping" tool (part of TopoMatch, installed in [Prerequisites](#software-prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
 
 `$ mapping -x topology.xml -c genome_64.mat`
 
