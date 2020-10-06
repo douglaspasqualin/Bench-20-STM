@@ -39,9 +39,9 @@ On Debian-based Linux distributions, the following command installs the required
 
 `$ sudo apt-get install tar gzip build-essential libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2`
 
-Installing R packages.
+Installing additional R packages.
 
-`$ Rscript Scripts/InstallPackages.R`
+`$ sudo Rscript Scripts/InstallPackages.R`
 
 For online thread mapping, [TopoMatch](https://gitlab.inria.fr/ejeannot/topomatch) must be installed. The same version used in the paper can be found in the folder [Tool](Tools). The following commands will install TopoMatch in the home folder:
 ```
