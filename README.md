@@ -38,7 +38,7 @@ To reproduce our experiments, the following packages/applications are necessary:
 
 On Debian-based Linux distributions, the following command installs the required packages:
 
-`$ sudo apt-get install tar gzip build-essential libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2 ghostscript`
+`$ sudo apt-get install tar gzip build-essential hwloc libhwloc-dev default-jre r-base r-cran-car r-cran-ggplot2 ghostscript`
 
 Installing additional R packages.
 
@@ -166,7 +166,7 @@ Before using TopoMatch, it is necessary to generate an xml file of the machine t
 
 After that, we can use the "mapping" tool (part of TopoMatch, installed in [Prerequisites](#software-prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
 
-`$ mapping -x topology.xml -c genome_64.mat`
+`$ #HOME/topomatch/bin/mapping -x topology.xml -c genome_64.mat`
 
 Copy all numbers of the result of the first line _TopoMatch_:
 ![Alt text](mapping.png?raw=true "Output of mapping tool. Part of TopoMatch")
