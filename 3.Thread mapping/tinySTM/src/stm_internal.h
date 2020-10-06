@@ -502,11 +502,11 @@ extern global_t _tinystm;
 #endif
     
 #ifndef MAPPING_INTERVAL
-#define MAPPING_INTERVAL           50000
+#define MAPPING_INTERVAL           100000
 #endif
     
 #ifndef THREAD_TO_INSTRUMENT
-#define THREAD_TO_INSTRUMENT        1
+#define THREAD_TO_INSTRUMENT        0
 #endif    
 
 #define GET_ADDR_SHARE(a)               (map_access + LOCK_IDX(a))
@@ -875,11 +875,11 @@ check_comm(volatile stm_word_t *addr, stm_tx_t *tx, int access_type) {
                 && tx->totalAddresses >= MAPPING_INTERVAL) {
             //printf("Total accesses: %d, time to do thread mapping\n", tx->totalAddresses);
             needMapping = 0;
-            if (enable_mapping(tx)) {
+            //if (enable_mapping(tx)) {
                 do_thread_mapping();
           /*  } else {
                 printf("#M\t%s\t%d\t%s\n", application_name, _tinystm.total_threads, "disabled"); */
-            } 
+            //} 
         }
 #endif
     }
