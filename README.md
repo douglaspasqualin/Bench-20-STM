@@ -166,7 +166,7 @@ Before using TopoMatch, it is necessary to generate an xml file of the machine t
 
 After that, we can use the "mapping" tool (part of TopoMatch, installed in [Prerequisites](#software-prerequisites)), sending the topology and the communication matrix to generate the optimized mapping. For instance:
 
-`$ #HOME/topomatch/bin/mapping -x topology.xml -c genome_64.mat`
+`$ $HOME/topomatch/bin/mapping -x topology.xml -c genome_64.mat`
 
 Copy all numbers of the result of the first line _TopoMatch_:
 ![Alt text](mapping.png?raw=true "Output of mapping tool. Part of TopoMatch")
