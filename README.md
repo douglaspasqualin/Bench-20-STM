@@ -233,6 +233,6 @@ Under the folder [PaperData/Sect. 5.2](PaperData/Sect.%205.2) there is a .csv fi
 
 * Section 4.2 to 4.5: We expected similar values of MSE between the executions of the majority of the applications.
 
-* Section 5.1: Since the majority of the applications have a similar communication behavior between executions and do not present a dynamic sharing behavior (Section 4.5) we excepted similar results between the static and online thread mapping.
+* Section 5.1: Since the majority of the applications have a similar communication behavior between executions and do not present a dynamic sharing behavior (see results of Section 4.5) we excepted similar results between the static and online thread mapping.
 
 * Section 5.2: After changing the application to represent the correct size of the cache line of current microarchitectures we excepted the lower execution time of means.
