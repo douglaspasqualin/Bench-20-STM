@@ -502,11 +502,11 @@ extern global_t _tinystm;
 #endif
     
 #ifndef MAPPING_INTERVAL
-#define MAPPING_INTERVAL           100000
+#define MAPPING_INTERVAL           50000
 #endif
     
 #ifndef THREAD_TO_INSTRUMENT
-#define THREAD_TO_INSTRUMENT        0
+#define THREAD_TO_INSTRUMENT        1
 #endif    
 
 #define GET_ADDR_SHARE(a)               (map_access + LOCK_IDX(a))
