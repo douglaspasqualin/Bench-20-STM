@@ -21,6 +21,7 @@
 * Paper ID: 19
 * Title: Characterizing the Sharing Behavior of Applications using Software Transactional Memory
 * Authors: Douglas Pereira Pasqualin, Matthias Diener, André Rauber Du Bois and Maurício Lima Pilla
+* DOI: [10.1007/978-3-030-71058-3_1](https://doi.org/10.1007/978-3-030-71058-3_1)
 
 
 ## Environment 
