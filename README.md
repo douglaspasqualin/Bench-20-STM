@@ -23,6 +23,21 @@
 * Authors: Douglas Pereira Pasqualin, Matthias Diener, André Rauber Du Bois and Maurício Lima Pilla
 * DOI: [10.1007/978-3-030-71058-3_1](https://doi.org/10.1007/978-3-030-71058-3_1)
 
+```
+  @InProceedings{Pasqualin:2021,
+  author="Pasqualin, Douglas Pereira and Diener, Matthias and Du Bois, Andr{\'e} Rauber and Pilla, Maur{\'i}cio Lima",
+  editor="Wolf, Felix and Gao, Wanling",
+  title="Characterizing the Sharing Behavior of Applications Using Software Transactional Memory",
+  booktitle="Benchmarking, Measuring, and Optimizing",
+  year="2021",
+  publisher="Springer International Publishing",
+  address="Cham",
+  pages="3--21",
+  isbn="978-3-030-71058-3",
+  doi="10.1007/978-3-030-71058-3_1",
+}
+```
+
 
 ## Environment 
 To run the experiments, we have used a Xeon machine with 8 sockets/NUMA nodes. Each socket has 12 cores totalling 96 cores (192 threads). For more details, please see the file [xeon.png](xeon.png)
